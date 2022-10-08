@@ -140,6 +140,14 @@ a {
  background-size: 100% auto;
 }
 
+.subscribe-catalog {
+  background-color: #81B3D3;
+  font-weight: 400;
+  text-align: center;
+  color:white;
+  background-size: 100% auto;
+ }
+
 .footer {
   background-color: white;
 }
