@@ -19,235 +19,230 @@ body {
   font-family: "PT Sans", sans-serif;
   font-size: 16px;
   line-height: 24px;
-  color: black;
+  color: #000000;
   background-color: #FFFFFF;
 }
 
-.header {
-  color: black;
-  background-color:#FFFFFF;
+.hotel-type, .hotel-price {
+  color: #333333;
+  font-size: 18px;
+  line-height: 21px;
 }
 
-
-ul {
-  list-style: none;
+.list-reset {
   margin: 0;
-  padding-left: 0;
+  padding: 0;
+  list-style: none;
 }
 
-a {
+.link {
   font-weight: 700;
   text-decoration: none;
-  color: black;
+  color: #000000;
 }
 
-.navigation-list li {
-  display: inline;
-}
 
 .navigation-link {
   font-weight: 700;
   text-align: center;
-  color:black;
-  background-color:#FFFFFF;
+  color:#000000;
   text-decoration: none;
+  font-size: 20px;
+  line-height: 24px;
 }
 
 .navigation-button {
   font-weight: 700;
   text-align: center;
-  color:black;
+  color:#000000;
   text-transform: uppercase;
   text-decoration: none;
+  font-size: 16px;
+  line-height: 20px;
 }
 
 .greeting-img {
   text-align: center;
-  background-image: url(/images/mount-sedona.jpg);
-  background-size: 100% auto;
-
+  background-image: url("../images/mount-sedona.jpg");
+  background-size: cover;
 }
 
 .greeting-title {
   font-weight: 700;
+  font-size: 30px;
+  line-height: 36px;
   text-align: center;
-  color:black;
   text-transform: uppercase;
 }
 
 .greeting-text{
+  font-size: 22px;
+  line-height: 26px;
   font-weight: 400;
   text-align: center;
-  color:black;
 }
 
 .advantages-title {
-  font-weight: 700;
-  color:black;
+  color:#000000;
   text-transform: uppercase;
+  font-size: 24px;
+  line-height: 26px;
 }
 
-.advantages {
+.advantages-content {
+  font-size: 18px;
+  line-height: 21px;
+}
+.advantages-content-blue {
   background-color: #81B3D3;
 }
 
 .sorting-title {
+  font-family: inherit;
+  font-size: 30px;
+  line-height: 36px;
   font-weight: 700;
-  color:black;
+  text-decoration: none;
   text-transform: uppercase;
+  color:#000000;
+}
+
+.hotels-title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  color:#000000;
 }
 
 
 .search-title {
-  font-weight: 700;
+  font-size: 30px;
+  line-height: 36px;
   text-align: center;
-  color:black;
+  color:#000000;
   text-transform: uppercase;
 }
 
 .search {
-  font-weight: 400;
+  font-size: 22px;
+  line-height: 26px;
   text-align: center;
-  color:black;
+  color:#000000;
 }
 
 .search-button {
   font-weight: 700;
   text-align: center;
-  color:black;
-  text-transform: uppercase;
-}
-
-.subscribe-home {
-  font-weight: 400;
-  text-align: center;
-  color:white;
-}
-
-.subscribe-title {
-  font-weight: 700;
-  text-align: center;
-  color:white;
   text-transform: uppercase;
 }
 
 .subscribe {
- background-color: #81B3D3;
- background-image: url(/images/subscribe-image.jpg);
- font-weight: 400;
- text-align: center;
- color:white;
- background-size: 100% auto;
-}
-
-.subscribe-catalog {
-  background-color: #81B3D3;
-  font-weight: 400;
   text-align: center;
-  color:white;
-  background-size: 100% auto;
+  background-size: cover;
  }
 
-.footer {
-  background-color: white;
+ .subscribe-text {
+  font-size: 22px;
+  line-height: 26px;
+  text-align: center;
+  color:#ffffff;
+}
+
+.subscribe-home {
+  background-color: #81B3D3;
+  background-image: url("../images/subscribe-image.jpg");
+
+}
+
+.subscribe-title {
+  font-size: 30px;
+  line-height: 36px;
+  text-align: center;
+  color:#ffffff;
+  text-transform: uppercase;
+}
+
+.subscribe-title-catalog {
+  font-size: 30px;
+  line-height: 36px;
+  text-align: center;
+  color:#000000;
+  text-transform: uppercase;
+}
+
+.subscribe-text-catalog{
+  font-size: 22px;
+  line-height: 26px;
+  text-align: center;
+  color: #000000;
 }
 
 .footer-phone {
   font-weight: 400;
   text-align: center;
-  color: black
+  color: #000000;
+  font-size: 40px;
+  line-height: 40px;
 }
 
 .footer-logo {
-  font-weight: 400;
-  text-align: right;
-  color: black
+  color: #000000;
 }
 
-.subscribe-button, .navigation-button {
-  font-family: inherit;
-  font-size: 16px;
-  line-height: 16px;
+.button {
+  display: inline-block;
+  padding: 8px;
+
   font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  font-family: "PT Sans", sans-serif;
   text-align: center;
   color: #ffffff;
+  text-transform: uppercase;
+  text-decoration: none;
+
   background-color: #756257;
-  text-decoration: none;
-  text-transform: uppercase;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
- .button-blue, .subscribe-button {
-  font-family: inherit;
-  font-size: 16px;
-  line-height: 16px;
-  font-weight: 700;
-  text-align: center;
-  color: #ffffff;
+
+ .button-blue {
   background-color: #81B3D3;
-  text-decoration: none;
-  text-transform: uppercase;
 }
 
  .hotels-favorites-active {
-  font-family: inherit;
-  font-size: 16px;
-  line-height: 16px;
-  font-weight: 700;
-  text-align: center;
-  color: #ffffff;
   background-color: #7DB54F;
-  text-decoration: none;
-  text-transform: uppercase;
 }
 
-.button-transparent, .filter-reset{
-  font-family: inherit;
-  font-size: 16px;
-  line-height: 16px;
-  font-weight: 700;
-  text-align: center;
-  color: #ffffff;
+.button-transparent {
   background-color: #81B3D3;
-  text-decoration: none;
-  text-transform: uppercase;
+
 }
 
 .filter-container {
-  background-image: url(/images/filter-background.png);
+  background-image: url("../images/filter-background.png");
   background-color: #81B3D3;
-  background-size: 100% auto;
+  background-size: cover;
 }
 
 .hotels-button-more {
-  font-family: inherit;
-  font-size: 16px;
-  line-height: 16px;
-  font-weight: 700;
-  text-align: center;
-  color: #ffffff;
   background-color: #756257;
-  text-decoration: none;
-  text-transform: uppercase;
 }
 
-.sorting-container {
-  font-family: inherit;
-  font-size: 16px;
-  line-height: 16px;
-  font-weight: 700;
-  color: #ffffff;
-  background-color: #81B3D3;
-  text-decoration: none;
-  text-transform: uppercase;
-}
+
 
 .hotels-rating-text {
   font-family: inherit;
   font-size: 16px;
-  line-height: 16px;
+  line-height: 20px;
   font-weight: 400;
-  color:black;
+  color:#333333;
+  text-align: center;
   text-decoration: none;
   text-transform: uppercase;
-  background-color: #E6E6E6;
+  background-color: #F2F2F2;
+  border-radius: 4px;
 }
