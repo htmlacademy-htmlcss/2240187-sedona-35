@@ -22,6 +22,7 @@
 }
 
 html {
+  height: 100%;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -31,7 +32,9 @@ html {
 body {
   width: 1200px;
   margin: 0 auto;
-
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
   font-size: 16px;
   line-height: 24px;
   font-family: "PT Sans", sans-serif;
@@ -39,6 +42,15 @@ body {
 
   background-color: #ffffff;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.main {
+  flex-grow: 1;
+}
+
+.page-container {
+  width: 1200px;
+  margin: 0 auto;
 }
 
 img {
@@ -107,6 +119,17 @@ img {
 
 }
 
+.navigation {
+  display: flex;
+  align-items: center;
+}
+
+
+.navigation-list {
+  max-width: 507px;
+  margin-left: auto;
+}
+
 .navigation-link {
   font-weight: 700;
   font-size: 20px;
@@ -115,7 +138,9 @@ img {
 }
 
 .navigation-button {
+  align-items:center;
   width: 160px;
+
 }
 
 .greeting-img {
@@ -137,6 +162,26 @@ img {
   text-align: center;
 }
 
+.advantages-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.advantages-item-full {
+  width: 100%;
+}
+
+.advantages-item-container {
+  display: flex;
+
+}
+
+.advantages-content {
+  width: 400px;
+  min-height: 384px;
+}
+
 .advantages-content-blue {
   background-color: #81B3D3;
 }
@@ -152,6 +197,13 @@ img {
   font-size: 18px;
   line-height: 21px;
 }
+
+.advantages-image img {
+  height: 100%;
+  display: block;
+}
+
+.advantages-item-full:last-child .advantages-content {order: 2;}
 
 .search {
   text-align: center;
@@ -219,6 +271,12 @@ img {
   text-transform: uppercase;
 }
 
+.hotels-item {
+ padding: 20px;
+ border: 1px solid #e6e6e6;
+ border-radius: 4px;
+}
+
 .hotels-title {
   font-size: 24px;
   line-height: 28px;
@@ -244,8 +302,32 @@ img {
   background-color: #7db54f;
 }
 
-.footer-phone {
-  font-size: 40px;
-  line-height: 40px;
-  text-align: center;
+.footer {
+ padding: 5px 5px 5px 5px;
+ align-items: stretch;
+ display: flex;
+ flex-direction: row;
+}
+
+.footer-social {
+ display: flex;
+ max-width: 142px;
+ flex-wrap: nowrap;
+}
+
+ .footer-phone {
+ display: block;
+ margin: 0 auto;
+ font-size: 40px;
+ line-height: 40px;
+ text-align: center;
+ color: #000000;
+ text-decoration: none;
+}
+
+.footer-logo {
+ display: block;
+ width: 115px;
+ height: 33px;
+ color: #000000;
 }
