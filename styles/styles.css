@@ -302,11 +302,17 @@ img {
   background-color: #7db54f;
 }
 
+.footer {
+ padding: 5px 5px 5px 5px;
+ align-items: stretch;
+ display: flex;
+ flex-direction: row;
+}
 
 .footer-social {
  display: flex;
  max-width: 142px;
- flex-wrap: wrap;
+ flex-wrap: nowrap;
 }
 
  .footer-phone {
