@@ -44,7 +44,7 @@ body {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
-.main-container {
+.main {
   flex-grow: 1;
 }
 
@@ -120,16 +120,14 @@ img {
 }
 
 .navigation {
-  width: 1200px;
-  margin: 0 auto;
   display: flex;
+  align-items: center;
 }
 
 
 .navigation-list {
-  width: 507px;
-  margin: 0;
-  padding: 0;
+  max-width: 507px;
+  margin-left: auto;
 }
 
 .navigation-link {
@@ -140,13 +138,12 @@ img {
 }
 
 .navigation-button {
+  align-items:center;
   width: 160px;
-  height: 36px;
+
 }
 
 .greeting-img {
-  display: block;
-  margin: 0 auto;
   text-align: center;
   background-image: url("../images/mount-sedona.jpg");
   background-size: cover;
@@ -167,25 +164,22 @@ img {
 
 .advantages-list {
   display: flex;
-  align-content: stretch;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 0;
-  padding: 0;
+  flex-wrap: wrap;
 }
 
-
-.advantages-item {
- height: 384px;
- width: 400px;
-}
 
 .advantages-item-full {
+  width: 100%;
+}
+
+.advantages-item-container {
   display: flex;
-  align-content: stretch;
-  flex-direction: row;
-  width: 1200px;
-  height: 384px;
+
+}
+
+.advantages-content {
+  width: 400px;
+  min-height: 384px;
 }
 
 .advantages-content-blue {
@@ -203,6 +197,13 @@ img {
   font-size: 18px;
   line-height: 21px;
 }
+
+.advantages-image img {
+  height: 100%;
+  display: block;
+}
+
+.advantages-item-full:last-child .advantages-content {order: 2;}
 
 .search {
   text-align: center;
@@ -271,12 +272,9 @@ img {
 }
 
 .hotels-item {
- height: 438px;
- width: 340px;
- left: 0px;
- top: 0px;
- border-radius: 4px;
  padding: 20px;
+ border: 1px solid #e6e6e6;
+ border-radius: 4px;
 }
 
 .hotels-title {
@@ -304,39 +302,32 @@ img {
   background-color: #7db54f;
 }
 
-.page-footer-container {
-  display: flex;
-  width: 1200px;
-  margin: 0 auto;
+.footer {
+ padding: 5px 5px 5px 5px;
+ align-items: stretch;
+ display: flex;
+ flex-direction: row;
 }
 
 .footer-social {
  display: flex;
- margin-right: 0;
- margin-left: 70px;
- margin-bottom: 35px;
- margin-top: 45px;
+ max-width: 142px;
+ flex-wrap: nowrap;
 }
 
  .footer-phone {
-  text-align: center;
-  font-size: 40px;
-  line-height: 40px;
-  height: 50px;
-  width: 720px;
-  margin-right: 41.5px;
-  margin-left: 41.5px;
-  margin-bottom: 30px;
-  margin-top: 40px;
-  border-radius: 0px;
+ display: block;
+ margin: 0 auto;
+ font-size: 40px;
+ line-height: 40px;
+ text-align: center;
+ color: #000000;
+ text-decoration: none;
 }
 
 .footer-logo {
-  height: 32.9px;
-  width: 114.9px;
-  margin-left: 41.5px;
-  margin-right: 70.1px;
-  margin-bottom: 38.6px;
-  margin-top: 48.5px;
-  border-radius: 0px;
+ display: block;
+ width: 115px;
+ height: 33px;
+ color: #000000;
 }
