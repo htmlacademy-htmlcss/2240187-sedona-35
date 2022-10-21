@@ -111,7 +111,7 @@ img {
   background-color: transparent;
 }
 
-/* navigation */
+
 
 .navigation {
   position: relative;
@@ -121,17 +121,26 @@ img {
   width: 100%;
 
   gap: 30px;
-  grid-template-columns: 138px auto auto 160px;
+  grid-template-columns: auto auto auto 160px;
+}
+
+
+.navigation-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 470px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
 
 .navigation-logo {
   position: relative;
-  z-index: 1;
 
   display: block;
   width: 138px;
   height: 70px;
-  margin-bottom: -6px;
+
 }
 
 .navigation-logo img {
@@ -140,10 +149,7 @@ img {
   height: 100%;
 }
 
-.navigation-list {
-  display: flex;
-  flex-wrap: wrap;
-}
+
 
 .navigation-item {
   margin: 0 10px;
@@ -162,7 +168,9 @@ img {
 
 .navigation-user-list {
   margin-left: auto;
+  position: relative;
 }
+
 
 .navigation-user-link {
   display: flex;
@@ -172,7 +180,8 @@ img {
   height: 40px;
 }
 
-/* Временно */
+
+
 .navigation-user-link img {
   display: block;
   width: 20px;
@@ -183,7 +192,7 @@ img {
   width: 160px;
 }
 
-/* greeting */
+
 .greeting-img {
   padding-top: 51px;
   padding-bottom: 82px;
@@ -374,7 +383,7 @@ img {
   grid-template-columns: 20px auto;
 }
 
-/* sorting  */
+
 .sorting {
   padding-top: 32px;
   padding-bottom: 20px;
@@ -404,11 +413,10 @@ img {
 }
 
 .sorting-view {
-  /* Лучше на гридах */
   display: flex;
 }
 
-/* hotels */
+
 .hotels-list {
   display: grid;
   padding-bottom: 40px;
@@ -461,7 +469,49 @@ img {
   background-color: #7db54f;
 }
 
-/* pagination */
+
+.pagination {
+  display: flex;
+  flex-direction: row;
+  padding: 0 730px 0 70px;
+
+}
+
+.pagination-item {
+  list-style-type: none;
+  margin-right: 8px;
+}
+
+.pagination-link {
+  display: block;
+  min-width: 60px;
+  min-height: 60px;
+  padding: 10px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 36px;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  background-color: #82b3d3;
+  border: 1px solid #82b3d3;
+  border-radius: 4px;
+}
+
+.pagination-link-current {
+  color: #000;
+  background-color: #f2f2f2;
+  border-color: transparent;
+}
+
+.pagination-link-more {
+  color: #000;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+
+/*
 .pagination {
   display: flex;
   padding: 39px 0 36px;
@@ -502,21 +552,15 @@ img {
   background-color: transparent;
   border-color: transparent;
 }
+*/
 
-/* Footer */
 .footer {
-  align-items: center;
-  padding-top: 45px;
-  padding-bottom: 35px;
-}
-
-.footer-container {
-  display: grid;
-
-  gap: 20px;
-  grid-template-columns: auto 1fr auto;
-
-}
+  display: flex;
+  flex-direction: row;
+  padding: 5px 5px 5px 5px;
+  align-items: stretch;
+  margin: 40px 70px 30px 70px;
+ }
 
 .footer-social {
   display: flex;
