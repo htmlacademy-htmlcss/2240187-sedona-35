@@ -86,6 +86,7 @@ img {
 
 .button {
   display: inline-block;
+  box-sizing: border-box;
   padding: 8px;
 
   font-weight: 700;
@@ -103,6 +104,10 @@ img {
   cursor: pointer;
 }
 
+.button + .button {
+  margin-left: 16px;
+}
+
 .button:hover {
   background-color: #615048;
 }
@@ -112,10 +117,15 @@ img {
 }
 
 .button:active {
-  background-color: #615048;
-  color: #9E9089;
+  background-color: #756157;
+  color: #FFFFFF;
+  opacity: 30%; /* почему-то не работает opacity, видимо не там написала его*/
 }
 
+.button:disabled {
+  background-color: #E5E5E5;
+  color: #FFFFFF;
+}
 
 .button-blue {
   background-color: #81b3d3;
@@ -131,28 +141,41 @@ img {
 
 .button-blue:active {
   background-color: #81b3d3;
-  color: #A8CAE0;
+  color: #FFFFFF;
+  opacity: 30%;
+}
+
+.button-blue:disabled {
+  background-color: #E5E5E5;
+  color: #FFFFFF;
 }
 
 .button-transparent {
   background-color: transparent;
-  color: #ffffff;
+  color: #FFFFFF;
 }
 
 .button-transparent:hover {
   background-color: transparent;
-  color: #B4C1C7;
+
 }
 
 .button-transparent:focus {
   background-color: transparent;
-  color: #ffffff;
-  border: 2px solid #82b3d3;
+  color: #FFFFFF;
+  outline: 2px solid #82b3d3; /*не работает обводка*/
 }
 
 .button-transparent:active {
   background-color: transparent;
-  color: #6e7c73;
+  color: #FFFFFF;
+  opacity: 30%;
+}
+
+.button-transparent:disabled {
+  background-color: transparent;
+  color: #FFFFFF;
+  opacity: 20%;
 }
 
 
@@ -171,9 +194,6 @@ img {
   display: flex;
   flex-wrap: wrap;
   max-width: 470px;
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
 }
 
 .navigation-logo {
@@ -196,6 +216,13 @@ img {
   margin: 0 10px;
   padding: 13px 0;
 }
+
+/* как сделать с помощью  before?*/
+.navigation-link-current{
+  border-bottom:2px solid #000000;
+}
+
+
 
 .navigation-link {
   display: inline-block;
@@ -227,15 +254,36 @@ img {
   display: block;
   width: 20px;
   height: 20px;
-  Padding: 22px, 12px, 22px, 12px;
+
+}
+.navigation-user-link-search {
+  height: 64px;
+  width: 44px;
+  left: 0px;
+  top: 0px;
+  border-radius: 0px;
+  padding: 22px 12px 22px 12px;
+
+}
+
+.navigation-user-link-favorites {
+  height: 64px;
+  width: 44px;
+  left: 44px;
+  top: 0px;
+  border-radius: 0px;
+  padding: 22px 12px 22px 12px;
+
 }
 
 .navigation-user-link-favorites-num {
-  width: 40px;
-  height: 40px;
+  position: absolute;
+  font-size: 70%;
+  padding: 2px 8px 2px 8px;
   border-radius: 50%;
-  border: 1px solid #CDCDCD;
+  transform: translate(15px, -10px);
   background-color: #68B738;
+  z-index: 1;
 }
 
 .navigation-button {
@@ -292,32 +340,44 @@ img {
   display: flex;
 }
 
+
 .advantages-content {
   width: 400px;
   min-height: 384px;
   padding: 103px 85px 30px;
+  background-color: #81b3d3;
 }
+
+
+.advantages-content:nth-child(2n) {
+  background-color: #7db54f;  /*не поняла, как присвоить каждому второму блоку цвет*/
+}
+
 
 .advantages-content-blue {
   background-color: #81b3d3;
   color: #FFFFFF;
 }
 
-.advantages-title.advantages-content-blue {
+.advantages-title .advantages-content-blue {
   color: #FFFFFF;
 }
 
-.advantages-content-light {
-  background-color: #F0F6FA;
+.advantages-content-blue .advantages-title {
+  color: #FFFFFF;
 }
 
-.advantages-content-pastel-blue {
-  background-color: #E6F0F6;
+/*что здесь надо прописать?
+.advantages-list-recommendations .advantages-content {
+  padding: ;
+  background-repeat: ;
+  background-position: ;
 }
+*/
 
 .advantages-content-home {
   background-color: #F0F6FA;
-  background-image: url(/images/svg/home.svg);
+  background-image: url("../images/svg/home.svg");
   background-repeat: no-repeat;
   background-position: center 80px;
 
@@ -325,18 +385,17 @@ img {
 
 .advantages-content-food {
   background-color: #FFFFFF;
-  background-image: url(/images/svg/food.svg);
+  background-image: url("../images/svg/food.svg");
   background-repeat: no-repeat;
   background-position: center 80px;
 }
 
 .advantages-content-plus {
   background-color: #F0F6FA;
-  background-image: url(/images/svg/gift.svg);
+  background-image: url("../images/svg/gift.svg");
   background-repeat: no-repeat;
   background-position: center 80px;
 }
-
 
 
 
@@ -346,21 +405,41 @@ img {
   text-align: center;
   color: #000000;
   text-transform: uppercase;
-  padding-bottom: 62px;
+  margin: 0 0 31px;
+  padding-bottom: 31px;
 }
 
-
-
-.advantages-title::after{
-  bottom: 0;
-  border: 1px solid #000;
+.advantages-title::after {
+  content: "";
+  position: absolute;
+  border-bottom: 2px solid #000000;
+  opacity: 30%;
+  padding: 30px;
+  /*как выровнять линию по центру?*/
 }
+
 
 .advantages-description {
   font-size: 18px;
   line-height: 21px;
   text-align: center;
 }
+
+.advantages-title-recommendation {
+  font-size: 24px;
+  line-height: 26px;
+  text-align: center;
+  color: #000000;
+  text-transform: uppercase;
+  padding-top: 55px;
+}
+
+.advantages-description-recommendation {
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+}
+
 
 .advantages-image img {
   display: block;
@@ -399,11 +478,43 @@ img {
   line-height: 36px;
 }
 
-/* subscribe */
-.subscribe {
+
+.subscribe {  /*как склеить кнопку и инпут вместе без скругления border?*/
   padding-top: 68px;
   padding-bottom: 104px;
   text-align: center;
+}
+
+.subscribe-form {
+  display: flex;
+  justify-content: center;
+  row-gap: 0;
+}
+
+.subscribe-input {
+ font-family: PT Sans;
+ font-size: 18px;
+ line-height: 24px;
+ font-weight: 400;
+ letter-spacing: 0em;
+ text-align: left;
+
+ width: 452px;
+ height: 52px;
+ border-radius: 6px;
+}
+
+.subscribe-button {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 36px;
+  letter-spacing: 0em;
+  text-align: center;
+
+  height: 52px;
+  width: 232px;
+  left: 452px;
+  top: 0px;
 }
 
 .subscribe-home {
@@ -433,13 +544,18 @@ img {
 }
 
 
+
 .breadcrumbs {
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline;
+  align-items:center;
   margin-bottom: 40px;
 }
 
+/*как выровнять иконки у крошек (они прямо подл надписью*/
+img + img {
+  margin: 10px 3px;
+}
 
 .filter {
   padding-top: 44px;
@@ -466,8 +582,6 @@ img {
   grid-template-columns: repeat(4, auto);
 }
 
-
-
 .filter-list {
   display: grid;
   gap: 17px 16px;
@@ -475,7 +589,7 @@ img {
 }
 
 
-.sorting .container {
+.sorting.container {
   padding-top: 32px;
   padding-bottom: 20px;
   display: grid;
@@ -485,11 +599,29 @@ img {
 }
 
 
-
 .sorting-title {
   font-size: 30px;
   line-height: 36px;
   text-transform: uppercase;
+}
+
+.sorting-select {  /*как изменить стиль кнопки, чтобы заливка была просто белой?*/
+ font-family: PT Sans;
+ font-size: 18px;
+ font-weight: 400;
+ line-height: 21px;
+ letter-spacing: 0em;
+ text-align: left;
+
+ height: 49px;
+ width: 292px;
+ left: 0px;
+ top: 0px;
+ border-radius: 4px;
+ padding: 14px 20px 14px 20px;
+ justify: space-between;
+
+
 }
 
 .sorting-view {
@@ -497,17 +629,20 @@ img {
   flex-wrap: wrap;
 }
 
+
 .sorting-item {
   display: block;
   width: 48px;
   height: 48px;
-
+  margin-right: 8px;
   border: 2px solid #e5e5e5;
   border-radius: 4px;
+
 }
 
-
-
+.sorting-item img {
+  padding: 14px 12px 14px 12px;
+}
 
 .hotels-list {
   display: grid;
@@ -546,6 +681,13 @@ img {
   color: #333333;
 }
 
+/* как сделать звёзды голубыми?
+.star img {
+  color: #68a2ca;
+}
+*/
+
+
 .hotels-rating-text {
   font-size: 16px;
   color: #333333;
@@ -569,25 +711,28 @@ img {
 
 .hotels-favorites-active:active  {
   background-color: #7db54f;
-  color: #a4cb84;
+  color: #FFFFFF;
+  opacity: 30%;
 }
 
 .pagination {
   display: flex;
   flex-wrap: wrap;
   padding-top: 40px;
-  padding-bottom: 60px;
+  padding-bottom: 70px;
 }
 
+
 .pagination-item {
-  margin-right: 10px;
+  margin-right: 8px;
 }
+
 
 .pagination-link {
   display: block;
   min-width: 60px;
   min-height: 60px;
-  padding: 10px;
+  padding: 5px 10px 5px 10px; /*как сделать квадраты для страничек такими же, как на образце, я запуталась*/
   font-weight: 700;
   font-size: 20px;
   line-height: 36px;
@@ -599,13 +744,58 @@ img {
   border-radius: 4px;
 }
 
+.pagination-link:hover {
+  background-color: #68A2CA;
+}
+
+.pagination-link:focus {
+  background-color: #68A2CA;
+}
+
+.pagination-link:active {
+  background-color: #82B3D3;
+  color: #FFFFFF;
+  opacity: 30%;
+}
+
+
 .pagination-link-current {
   color: #000;
   background-color: #f2f2f2;
   border-color: transparent;
 }
 
+.pagination-link-current:hover {
+  background-color: #F2F2F2;
+}
+
+.pagination-link-current:focus {
+  background-color: #F2F2F2;
+}
+
+.pagination-link-current:active {
+  background-color: #F2F2F2;
+}
+
 .pagination-link-more {
+  color: #000;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.pagination-link-more:hover {
+  color: #000;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.pagination-link-more:focus {
+  color: #000;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.pagination-link-more:active {
   color: #000;
   background-color: transparent;
   border-color: transparent;
@@ -624,25 +814,28 @@ img {
   flex-wrap: wrap;
 }
 
-.social-link {
+.social-link {  /*как сделать так, чтобы цвет свг менялся при разных состояниях?*/
   display: flex;
   justify-content: center;
   align-items: center;
   width: 47px;
   height: 40px
-  color: #83b3d3;
+  color: #82B3D3;
 }
 
+/*состояния социальных кнопок*/
 .social-link:hover {
-  color: #68a2ca;
+  color: #68A2CA;
 }
 
 .social-link:focus {
-  color: #68a2ca;
+  color: #68A2CA;
 }
 .social-link:active {
-  color: #D2E3EF;
+  color: #68A2CA;
+  opacity: 30%;
 }
+
 
 .footer-phone {
   display: inline-block;
@@ -664,10 +857,11 @@ img {
 }
 
 .footer-phone:active{
-  color: #d5cfcc;
+  color: #756157;
+  opacity: 30%;
 }
 
-.footer-logo {
+.footer-logo { /*как сделать так, чтобы цвет свг менялся при разных состояниях?*/
   display: block;
   width: 115px;
   height: 33px;
@@ -683,5 +877,6 @@ img {
 }
 
 .footer-logo:active {
-  color: #d5cfcc;
+  color: #756157;
+  opacity: 30%;
 }
