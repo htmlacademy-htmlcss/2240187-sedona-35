@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="ru">
+
   <head>
     <meta charset="utf-8">
     <title>Каталог</title>
     <link rel="stylesheet" href="styles/styles.css">
   </head>
+
   <body>
     <header class="header">
       <nav class="navigation">
@@ -98,8 +100,8 @@
                 </div>
               </div>
               <div class="filter-toggle">
-                <button class="filter-toggle-item filter-toggle-item-min" type="button" aria-label="Изменить минимальную цену"></button>
-                <button class="filter-toggle-item filter-toggle-item-max" type="button" aria-label="Изменить максимальную цену"></button>
+                <button class="filter-toggle-bar filter-toggle-bar-min" type="button" aria-label="Изменить минимальную цену"></button>
+                <button class="filter-toggle-bar filter-toggle-bar-max" type="button" aria-label="Изменить максимальную цену"></button>
               </div>
             </div>
           </fieldset>
@@ -114,20 +116,17 @@
       <section class="sorting container">
         <h2 class="sorting-title">Найдено гостиниц: 38</h2>
         <select class="select sorting-select">
-          <option value="sorting-uncostly">Сначало дешёвые</option>
-          <option value="sorting-expensive">Сначало дорогие</option>
+          <option value="sorting-uncostly">Сначала дешёвые</option>
+          <option value="sorting-expensive">Сначала дорогие</option>
         </select>
         <div class="sorting-view">
           <a class="link sorting-item sorting-item-tile sorting-item-active" href="#">
-            <img src="./images/svg/list.svg" alt="Показать список">
             <span class="visually-hidden">Показать список</span>
           </a>
           <a class="link sorting-item sorting-item-slideshow" href="#">
-            <img src="./images/svg/slideshow.svg" alt="Показать слайдшоу">
             <span class="visually-hidden">Показать слайдшоу</span>
           </a>
           <a class=" link sorting-item sorting-item-list" href="#">
-            <img src="./images/svg/cards.svg" alt="Показать карточки">
             <span class="visually-hidden">Показать карточки</span>
           </a>
         </div>
@@ -144,11 +143,11 @@
               <span class="hotels-price">От 4000 ₽</span>
               <a class="button hotels-button hotels-button-more" href="#">Подробнее</a>
               <button class="button button-blue hotels-button hotels-favorites" type="button">В избранное</button>
-              <div class="hotels-rating-star star">
-                <span><img src="./images/svg/star.svg" alt="Звезда"></span>
-                <span><img src="./images/svg/star.svg" alt="Звезда"></span>
-                <span><img src="./images/svg/star.svg" alt="Звезда"></span>
-                <span><img src="./images/svg/star.svg" alt="Звезда"></span>
+              <div class="hotels-rating-star star-4">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
               </div>
               <span class="hotels-rating-text">Рейтинг:8,5</span>
             </div>
@@ -163,11 +162,11 @@
               <span class="hotels-price">От 5000 ₽</span>
               <a class="button hotels-button hotels-button-more" href="#">Подробнее</a>
               <button class="button button-blue hotels-button hotels-favorites hotels-favorites-active" type="button">В избранном</button>
-              <div class="hotels-rating-star star">
-                <span><img src="./images/svg/star.svg" alt="Звезда"></span>
-                <span><img src="./images/svg/star.svg" alt="Звезда"></span>
-                <span><img src="./images/svg/star.svg" alt="Звезда"></span>
-                <span><img src="./images/svg/star.svg" alt="Звезда"></span>
+              <div class="hotels-rating-star star-4">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
               </div>
               <span class="hotels-rating-text">Рейтинг:9,2</span>
             </div>
@@ -182,10 +181,10 @@
               <span class="hotels-price">От 2500 ₽</span>
               <a class="button hotels-button hotels-button-more" href="#">Подробнее</a>
               <button class="button button-blue hotels-button hotels-favorites" type="button">В избранное</button>
-              <div class="hotels-rating-star star">
-                <span><img src="./images/svg/star.svg" alt="Звезда"></span>
-                <span><img src="./images/svg/star.svg" alt="Звезда"></span>
-                <span><img src="./images/svg/star.svg" alt="Звезда"></span>
+              <div class="hotels-rating-star star-3">
+                <span></span>
+                <span></span>
+                <span></span>
               </div>
               <span class="hotels-rating-text">Рейтинг:6,9</span>
             </div>
@@ -201,34 +200,34 @@
               <span class="hotels-price">От 1500 ₽</span>
               <a class="button hotels-button hotels-button-more" href="#">Подробнее</a>
               <button class="button button-blue hotels-button hotels-favorites" type="button">В избранное</button>
-              <div class="hotels-rating-star star">
-                <span><img src="./images/svg/star.svg" alt="Звезда"></span>
-                <span><img src="./images/svg/star.svg" alt="Звезда"></span>
+              <div class="hotels-rating-star star-2">
+                <span></span>
+                <span></span>
               </div>
               <span class="hotels-rating-text">Рейтинг:5,0</span>
             </div>
           </li>
         </ul>
-      <ul class="pagination list-reset">
-        <li class="pagination-item">
-          <a class="pagination-link pagination-link-current">1</a>
-        </li>
-        <li class="pagination-item">
-          <a class="pagination-link" href="#">2</a>
-        </li>
-        <li class="pagination-item">
-          <a class="pagination-link" href="#">3</a>
-        </li>
-        <li class="pagination-item">
-          <a class="pagination-link" href="#">4</a>
-        </li>
-        <li class="pagination-item">
-          <a class="pagination-link pagination-link-more" href="#" aria-label="Следующая страница">...</a>
-        </li>
-        <li class="pagination-item">
-          <a class="pagination-link" href="#">10</a>
-        </li>
-      </ul>
+        <ul class="pagination list-reset">
+          <li class="pagination-item">
+            <a class="pagination-link pagination-link-current">1</a>
+          </li>
+          <li class="pagination-item">
+            <a class="pagination-link" href="#">2</a>
+          </li>
+          <li class="pagination-item">
+            <a class="pagination-link" href="#">3</a>
+          </li>
+          <li class="pagination-item">
+            <a class="pagination-link" href="#">4</a>
+          </li>
+          <li class="pagination-item">
+            <a class="pagination-link pagination-link-more" href="#" aria-label="Следующая страница">...</a>
+          </li>
+          <li class="pagination-item">
+            <a class="pagination-link" href="#">10</a>
+          </li>
+        </ul>
       </section>
       <section class="subscribe">
         <h2 class="subscribe-title">Подпишитесь на рассылку</h2>
@@ -240,7 +239,6 @@
         </form>
       </section>
     </main>
-
 
     <footer class="footer">
 
@@ -264,12 +262,13 @@
           </a>
         </li>
       </ul>
-        <a class="link footer-phone" href="tel:+78128121212">+7 (812) 812-12-12</a>
-        <a class="link footer-logo" href="https://htmlacademy.ru/">
+      <a class="link footer-phone" href="tel:+78128121212">+7 (812) 812-12-12</a>
+      <a class="link footer-logo" href="https://htmlacademy.ru/">
         <img src="images/svg/html-academy.svg" alt="Логотип HTMLAcademy">
         <span class="visually-hidden">Логотип HTMLAcademy</span>
-        </a>
+      </a>
 
     </footer>
   </body>
+
 </html>
