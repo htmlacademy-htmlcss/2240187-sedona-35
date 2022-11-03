@@ -85,7 +85,7 @@ img {
 }
 
 .button {
-  box-sizing: border-box;
+  display: inline-block;
   padding: 8px;
 
   font-weight: 700;
@@ -273,7 +273,7 @@ img {
   padding-bottom: 82px;
 
   background-color: #004c7f;
-  background-image: url("../images/svg/mount-sedona.svg");
+  background-image: url("../images/mount-sedona.jpg");
   background-size: cover;
 }
 
@@ -373,6 +373,7 @@ img {
 .advantages-description {
   font-size: 18px;
   line-height: 21px;
+  color: #333333;
 }
 
 .advantages-content-blue .advantages-description {
@@ -447,7 +448,6 @@ img {
 }
 
 .subscribe {
-  /*как склеить кнопку и инпут вместе без скругления border?*/
   padding-top: 68px;
   padding-bottom: 104px;
 
@@ -461,16 +461,13 @@ img {
   background-size: cover;
 }
 
-.subscribe-title {
-  margin-bottom: 20px;
-
-  font-size: 30px;
-  line-height: 36px;
+.subscribe-home .subscribe-title {
+  color: #ffffff;
   text-transform: uppercase;
 }
 
-.subscribe-home .subscribe-title {
-  color: #ffffff;
+.subscribe-title {
+  text-transform: uppercase;
 }
 
 .subscribe-text {
@@ -637,30 +634,47 @@ img {
   grid-template-columns: 20px auto;
 }
 
-/*обнуляем обрамление у фильтров*/
-.filter-group-range {
-  margin: 0;
-  margin-bottom: 40px;
-  padding: 0;
-  border: none;
+.filter-control {
+  line-height: 23px;
 }
 
-.filter-group-check {
-  margin: 0;
-  margin-bottom: 40px;
-  padding: 0;
-  border: none;
+.filter-button {
+  display: flex;
+  flex-direction: column;
+  padding-top: 56px;
 }
 
-.filter-group-radio {
+.filter-input {
+  position: relative;
+  width: 20px;
+  height: 20px;
   margin: 0;
-  margin-bottom: 40px;
-  padding: 0;
-  border: none;
+  background-color: #fff;
+  border-radius: 4px;
+  appearance: none;
 }
 
-/*попыталась изменить стиль чекбоксов и радио, но все поехало*/
-/*как поставить кнопки применить и сбросить друг под друга?*/
+.filter-input-check:checked {
+  background-image: url("../images/svg/blue-tick.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.filter-input-radio {
+  border-radius: 50%;
+}
+
+.filter-input-radio:checked::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background-color: #3f5e72;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
 
 .sorting {
   display: grid;
@@ -698,35 +712,18 @@ img {
   appearance: none;
 }
 
-/*состояния sorting select по цене*/
-
-.sorting-select:hover,
-.sorting-select:focus {
-  border-color: #68a2ca;
-  border-radius: 2px;
-}
-
-.sorting-select:focus {
-  border-radius: 2px;
-  outline: 2px solid #68a2ca;
+.sorting-select:focus,
+.sorting-select:hover {
+  border: 2px solid #68a2ca;
 }
 
 .sorting-select:active {
-  color: #000000;
-
-  border-radius: 2px;
-  outline: 2px solid #3f5e72;
+  border: 2px solid #3f5e72;
 }
 
-/* Disabled */
-.sorting-select:disabled,
-.sorting-select:disabled:hover {
-  color: #0000004d;
-
-  background-color: #0000004d;
-  border-color: #0000004d;
-  border-radius: 2px;
-  outline: 2px solid #000000;
+.sorting-select:disabled {
+  border: 2px solid #000000;
+  opacity: 0.3;
 }
 
 .sorting-view {
@@ -766,156 +763,196 @@ img {
 }
 
 .sorting-item:focus {
-  border: 2px solid ##68a2ca;
+  border: 2px solid #68a2ca;
 }
 
 .sorting-item:active {
   border: 2px solid #000000;
 }
 
-.filter-range-input {
-  height: 48px;
-  width: 143px;
-  left: 20px;
-  top: 264px;
-  border-radius: 0px;
-} /*как сделать инпут для цены? не получается*/
-
-/*тоггл с ценой*/
-.filter-toggle {
-  position: relative;
-  left: 0.5px;
-
-  width: 287px;
-  height: 4px;
-  margin-top: 36px;
-
-  background-color: #ffffff;
-  border-radius: 0;
+.filter-group-range {
+  margin-right: 4px;
+  margin-left: auto;
 }
-
-.filter-toggle-bar {
-  position: absolute;
-
-  width: 20px;
-  height: 20px;
-
-  background-color: #ffffff;
-  border: 2px;
-  border-radius: 30%;
-  box-shadow: ;
-  cursor: pointer;
-}
-
-/*почему-то ползунок остается 1 и не двигается
-
-.filter-toggle-bar-min {
-  top: -8px;
-  left: -10px;
-}
-
-.filter-toggle-bar-max {
-  top: -8px;
-  right: -10px;
-}
-
-*/
 
 .filter-range-change {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  margin-bottom: 35px;
+  gap: 2px;
+  grid-template-columns: repeat(2, 143px);
 }
 
 .filter-range-item {
-  display: flex;
-  margin-right: 5px;
+  position: relative;
 }
 
 .filter-range-input {
-  width: 30px;
-  padding: 0 2px;
-  font: inherit;
-  text-align: center;
-  background-color: transparent;
-  border: none;
+  width: 100%;
+  padding: 10px 45px 10px 18px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  font-family: "PTsans", sans-serif;
+  color: #000000;
+  background-color: #f2f2f2;
+  border: 2px solid transparent;
+  appearance: none;
+}
+
+.filter-range-input-min {
+  border-radius: 4px 0 0 4px;
+}
+
+.filter-range-input-max {
+  border-radius: 0 4px 4px 0;
+}
+
+.filter-range-input[type="number"] {
   appearance: textfield;
 }
 
 .filter-range-input::-webkit-outer-spin-button,
 .filter-range-input::-webkit-inner-spin-button {
   appearance: none;
-  margin: 0;
 }
 
-/*все настройки toggle, filter сделаны как в демонстрации, тем не менее, ничего не работает*/
+.filter-range-input:hover {
+  background-color: #e6e6e6;
+}
 
-/*с карточкой отелей не стала ничего менять, потому что по новому образцу все ломается*/
+.filter-range-input:focus {
+  background-color: #e6e6e6;
+  outline: 3px solid #83b3d3;
+}
+
+.filter-range-input:active {
+  background-color: #f2f2f2;
+  border: 2px solid #000000;
+  outline: none;
+}
+
+.filter-range-disabled,
+.filter-range:disabled {
+  opacity: 0.3;
+}
+
+.filter-range-item label {
+  position: absolute;
+  right: 0;
+  padding: 11px 20px;
+  line-height: 24px;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.filter-toggle {
+  position: relative;
+  height: 20px;
+}
+
+.filter-toggle::before,
+.filter-toggle::after {
+  content: "";
+  position: absolute;
+  bottom: 8px;
+  height: 4px;
+}
+
+.filter-toggle::before {
+  left: 0;
+  width: 76%;
+  background-color: #ffffff;
+}
+
+.filter-toggle::after {
+  right: 0;
+  width: 24%;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.filter-toggle-bar {
+  position: absolute;
+  bottom: 0;
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 5px;
+}
+
+.filter-toggle-bar-min {
+  left: 0;
+}
+
+.filter-toggle-bar-max {
+  right: 21%;
+}
+
 .hotels-list {
   display: grid;
   padding-bottom: 40px;
 
   border-bottom: 1px solid #e6e6e6;
 
-  gap: 19px 18px;
+  gap: 17px 18px;
   grid-template-columns: repeat(3, 1fr);
 }
 
 .hotels-item {
+  display: grid;
   padding: 20px;
 
   border: 1px solid #e6e6e6;
   border-radius: 4px;
-}
 
-.hotels-img img {
-  height: 212px;
-  width: 300px;
-  left: 20px;
-  top: 20px;
-  border-radius: 0px;
-}
-
-.hotels-descript {
-  display: grid;
-  padding-top: 17px;
-
-  gap: 15px 20px;
+  gap: 16px 20px;
   grid-template-columns: repeat(2, 1fr);
 }
 
+.hotels-img {
+  display: block;
+  width: 100%;
+  height: 212px;
+
+  grid-column: 1/-1;
+}
+
+.hotels-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .hotels-title {
+  margin: 0;
+
   font-size: 24px;
   line-height: 28px;
 
   grid-column: 1/-1;
 }
 
-.hotels-type,
 .hotels-price {
-  font-size: 18px;
-  line-height: 21px;
-  color: #333333;
+  text-align: right;
 }
 
 .hotels-rating-star {
   display: block;
   height: 37px;
 
-  background-image: url("../images/svg/star-blue.svg");
+  background-image: url("../images/svg/stars.svg");
   background-repeat: no-repeat;
   background-position: left center;
 }
 
-/*как сделать несколько звёздочек?*/
-.star-4 {
+.hotels-rating-star-3 {
   width: 90px;
 }
 
-.star-3 {
+.hotels-rating-star-3 {
   width: 70px;
 }
 
-.star-2 {
+.hotels-rating-star-2 {
   width: 50px;
 }
 
@@ -964,7 +1001,7 @@ img {
   display: block;
   min-width: 60px;
   min-height: 60px;
-  padding: 5px 10px 5px 10px; /*как сделать квадраты для страничек такими же, как на образце, я запуталась*/
+  padding: 10px;
 
   font-weight: 700;
   font-size: 20px;
@@ -974,7 +1011,7 @@ img {
   text-decoration: none;
 
   background-color: #82b3d3;
-  border: 8px solid #82b3d3;
+  border: 1px solid #82b3d3;
   border-radius: 4px;
 }
 
@@ -1030,7 +1067,10 @@ img {
   color: #83b3d3;
 }
 
-/*состояния социальных кнопок*/
+.social-link svg {
+  fill: currentColor;
+}
+
 .social-link:hover {
   color: #68a2ca;
 }
@@ -1041,6 +1081,8 @@ img {
 
 .social-link:active {
   color: #68a2ca;
+
+  opacity: 30%;
 }
 
 .footer-phone {
@@ -1069,12 +1111,15 @@ img {
 }
 
 .footer-logo {
-  /*как сделать так, чтобы цвет свг менялся при разных состояниях?*/
   display: block;
   width: 115px;
   height: 33px;
 
   color: #000000;
+}
+
+.footer-logo svg {
+  fill: currentColor;
 }
 
 .footer-logo:hover {
@@ -1091,7 +1136,6 @@ img {
   opacity: 30%;
 }
 
-/*
 .modal-container {
   position: fixed;
   top: 0;
@@ -1099,34 +1143,37 @@ img {
   display: flex;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.modal-container-close {
-  display: none;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .modal {
   position: relative;
   margin: auto;
-  padding: 40px;
   background-color: #ffffff;
+  border-radius: 30px;
 }
 
 .modal-auth {
-  width: 360px;
+  width: 717px;
+  height: 576px;
+}
+
+.modal-content {
+  padding: 64px 70px 64px 70px;
 }
 
 .modal-close-button {
   position: absolute;
   padding: 0;
-  top: 0;
-  right: 0;
-  width: 56px;
-  height: 44px;
-  background-color: #ffffff;
+  height: 52px;
+  width: 52px;
+  left: 613px;
+  top: 64px;
+  border-radius: 50%;
+
   border: none;
   background-image: url("../images/svg/cross.svg");
+  background-color: #f2f2f2;
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
@@ -1136,50 +1183,135 @@ img {
   margin: 0;
   margin-bottom: 24px;
   font-family: "PT Sans Narrow", sans-serif;
-  font-size: 32px;
-  line-height: 35px;
+  font-size: 30px;
+  line-height: 36px;
   font-weight: 700;
   color: #000000;
   text-transform: uppercase;
 }
 
-.auth-form .field-group {
-  margin: 0;
-  margin-bottom: 16px;
+.go-date-field,
+.come-date-field,
+.adults,
+.children {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
 }
 
-.auth-form-user-options {
+.date-form-field {
+  height: 48px;
+  width: 440px;
+  left: 137px;
+  top: 0px;
+  padding: 0px 20px 0px 20px;
+
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+
+  background-color: #f2f2f2;
+  background-image: url("../images/svg/calendar.svg");
+  background-repeat: no-repeat;
+  background-position: center right 18px;
+  border: 2px solid #f2f2f2;
+  border-radius: 4px;
+
+  appearance: none;
+}
+
+.people {
+  display: grid;
+  grid-template-columns: auto auto;
+  margin-top: 23px;
+}
+
+.modal-find-button {
+  height: 60px;
+  width: 577px;
+  left: 0px;
+  top: 288px;
+  border-radius: 10px;
+  padding: 18px 77px 18px 77px;
+}
+
+.come-date-field {
+  margin-right: 4px;
+}
+
+.go-date-field {
+  margin-right: auto;
+}
+
+.children,
+.adults {
   display: flex;
-  justify-content: space-between;
-  font-weight: 400;
+  align-items: baseline;
+  gap: 48px;
 }
 
-.auth-form-user-options .control-label {
-  font-weight: 400;
+.field-group-1 {
+  margin-top: 64px;
 }
 
-.auth-form .field {
-  width: 328px;
+.modal-container-close {
+  display: none;
 }
 
-.auth-form-recovery {
-  line-height: 22px;
+.form-description-1 {
+  color: #ff5757;
+}
+
+.form-description {
+  padding: 0px 20px 0px 20px;
+  margin-left: 137px;
+}
+
+.children svg {
+  position: absolute;
+  padding: 0;
+  height: 12px;
+  width: 2px;
+  left: 9px;
+  top: 4px;
+  fill: currentColor;
+
+  border: none;
+  border-radius: 50%;
+  background-color: #83b3d3;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+.adults-counter {
+  position: relative;
+
+  border-radius: 4px;
+
+  padding: 10px 45px 10px 18px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  font-family: "PTsans", sans-serif;
   color: #000000;
+  background-color: #f2f2f2;
+  border: 2px solid transparent;
+  appearance: none;
 }
 
-.auth-form-button {
-  width: 360px;
-  margin-bottom: 16px;
-}
+.children-counter {
+  position: relative;
 
-.auth-form .button + .button {
-  margin: 0;
-}
+  border-radius: 4px;
 
-.auth-form-register {
-  width: 360px;
+  padding: 10px 45px 10px 18px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  font-family: "PTsans", sans-serif;
   color: #000000;
-  background-color: #ffffff;
+  background-color: #f2f2f2;
+  border: 2px solid transparent;
+  appearance: none;
 }
-
-*/
