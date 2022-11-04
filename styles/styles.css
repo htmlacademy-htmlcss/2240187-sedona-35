@@ -207,6 +207,7 @@ img {
 }
 
 .navigation-link-current {
+  /*не работает*/
   text-decoration: 2px solid underline;
 
   text-decoration-color: #756257;
@@ -568,13 +569,13 @@ img {
 .breadcrumbs-item::after {
   content: "";
   position: absolute;
-  top: 50%;
+  top: 60%;
   right: -18px;
 
   width: 7px;
   height: 10px;
 
-  background-image: url("../images/svg/breadcrumbs.svg");
+  background-image: url("../images/svg/arrow-bread.svg");
   background-repeat: no-repeat;
   background-size: contain;
   transform: translateY(-50%);
@@ -594,10 +595,22 @@ img {
   text-decoration: none;
 }
 
+.breadcrumbs-link-current:hover {
+  opacity: 60%;
+}
+
+.breadcrumbs-link-current:focus {
+  opacity: 60%;
+}
+
+.breadcrumbs-link-current:active {
+  opacity: 30%;
+}
+
 .breadcrumbs-item-home .breadcrumbs-link {
   width: 13px;
   height: 21px;
-  background-image: url("../images/svg/home-breadcrumb.svg");
+  background-image: url("../images/svg/home-bread.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 13px 15px;
@@ -638,6 +651,18 @@ img {
   line-height: 23px;
 }
 
+.filter-control:hover {
+  opacity: 60%;
+}
+
+.filter-control:focus {
+  opacity: 60%;
+}
+
+.filter-control:active {
+  opacity: 30%;
+}
+
 .filter-button {
   display: flex;
   flex-direction: column;
@@ -654,6 +679,20 @@ img {
   appearance: none;
 }
 
+.filter-input:hover {
+  opacity: 60%;
+}
+
+.filter-input:focus {
+  /*синяя обводка не работает*/
+  border: 3px solid #83b3d3;
+  opacity: 60%;
+}
+
+.filter-input:active {
+  opacity: 30%;
+}
+
 .filter-input-check:checked {
   background-image: url("../images/svg/blue-tick.svg");
   background-repeat: no-repeat;
@@ -662,6 +701,20 @@ img {
 
 .filter-input-radio {
   border-radius: 50%;
+}
+
+.filter-input-radio:hover {
+  opacity: 60%;
+}
+
+.filter-input-radio:focus {
+  /*синяя обводка не работает*/
+  border: 3px solid #83b3d3;
+  opacity: 60%;
+}
+
+.filter-input-radio:active {
+  opacity: 30%;
 }
 
 .filter-input-radio:checked::after {
@@ -763,6 +816,7 @@ img {
 }
 
 .sorting-item:focus {
+  /*не работает*/
   border: 2px solid #68a2ca;
 }
 
@@ -944,7 +998,7 @@ img {
   background-position: left center;
 }
 
-.hotels-rating-star-3 {
+.hotels-rating-star-4 {
   width: 90px;
 }
 
@@ -1154,11 +1208,9 @@ img {
 }
 
 .modal-auth {
-  width: 717px;
   height: 576px;
-}
-
-.modal-content {
+  width: 717px;
+  border-radius: 30px;
   padding: 64px 70px 64px 70px;
 }
 
@@ -1179,6 +1231,14 @@ img {
   cursor: pointer;
 }
 
+.modal-close-button:focus {
+  outline: #83b3d3; /*не работает*/
+}
+
+.modal-close-button:active {
+  opacity: 60%;
+}
+
 .modal-title {
   margin: 0;
   margin-bottom: 24px;
@@ -1190,25 +1250,29 @@ img {
   text-transform: uppercase;
 }
 
-.go-date-field,
-.come-date-field,
-.adults,
-.children {
+.come-date-field {
   font-size: 20px;
   font-weight: 700;
   line-height: 24px;
+  width: 113px;
+}
+
+.go-date-field {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  width: 119px;
 }
 
 .date-form-field {
   height: 48px;
   width: 440px;
-  left: 137px;
-  top: 0px;
-  padding: 0px 20px 0px 20px;
 
   font-size: 20px;
   font-weight: 700;
   line-height: 24px;
+  color: #000000;
+  opacity: 60%;
 
   background-color: #f2f2f2;
   background-image: url("../images/svg/calendar.svg");
@@ -1220,27 +1284,21 @@ img {
   appearance: none;
 }
 
-.people {
-  display: grid;
-  grid-template-columns: auto auto;
-  margin-top: 23px;
+.date-form-field:hover {
+  background-color: #e6e6e6;
+  border: 2px solid #e6e6e6;
 }
 
-.modal-find-button {
-  height: 60px;
-  width: 577px;
-  left: 0px;
-  top: 288px;
-  border-radius: 10px;
-  padding: 18px 77px 18px 77px;
+.date-form-field:focus {
+  background-color: #e6e6e6;
+  border: 2px solid #83b3d3;
 }
 
-.come-date-field {
-  margin-right: 4px;
-}
-
-.go-date-field {
-  margin-right: auto;
+.date-form-field:active {
+  background-color: #e6e6e6;
+  border: 2px solid #000000;
+  color: #000000;
+  opacity: 100%;
 }
 
 .children,
@@ -1258,60 +1316,192 @@ img {
   display: none;
 }
 
-.form-description-1 {
+.message-error {
   color: #ff5757;
 }
 
-.form-description {
+.form-message {
   padding: 0px 20px 0px 20px;
   margin-left: 137px;
 }
 
-.children svg {
+.form-item-people {
+  display: flex;
+  align-items: center;
+
+  margin-top: 23px;
+  margin-left: -20px;
+
+  padding: 10px 45px 10px 18px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  font-family: "PTsans", sans-serif;
+  color: #000000;
+
+  appearance: none;
+}
+
+.form-container-people {
+  display: flex;
+  flex-direction: row;
+  align-content: flex-start;
+  margin-right: 88px;
+}
+
+.form-input-people {
+  line-height: 24px;
+  height: 48px;
+  width: 35px;
+  left: 40px;
+
+  padding: 14px 10px 14px 10px;
+}
+
+.form-btn {
+  height: 48px;
+  width: 40px;
+
+  padding: 14px 10px 14px 10px;
+
+  background-color: #f2f2f2;
+  border: 2px solid #f2f2f2;
+  border-radius: 4px;
+
+  appearance: none;
+}
+
+.form-btn-min {
+  background-image: url("../images/svg/minus.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.form-btn-max {
+  background-image: url("../images/svg/plus.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.form-btn-min:hover {
+  background-image: url("../images/svg/black_minus.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.form-btn-min:focus {
+  background-image: url("../images/svg/black_minus.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  /*как сделать обводку вокруг кнопки?*/
+}
+
+.form-btn-min:active {
+  background-image: url("../images/svg/minus.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.form-btn-max:hover {
+  background-image: url("../images/svg/black_plus.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.form-btn-max:focus {
+  background-image: url("../images/svg/black_plus.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.form-btn-max:active {
+  background-image: url("../images/svg/plus.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.form-label-adult {
+  margin-right: 46px;
+}
+
+.form-label-child {
+  margin-right: 82px;
+}
+
+.field-group-1,
+.field-group-2 {
+  justify-content: space-between;
+}
+
+.form-info-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.form-info-btn {
   position: absolute;
   padding: 0;
-  height: 12px;
-  width: 2px;
-  left: 9px;
-  top: 4px;
-  fill: currentColor;
+  height: 26px;
+  width: 26px;
+  left: 59px;
+  top: -5px;
+
+  border-radius: 50%;
 
   border: none;
-  border-radius: 50%;
+  background-image: url("../images/svg/info.svg");
   background-color: #83b3d3;
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
 }
 
-.adults-counter {
-  position: relative;
+.form-info-desc {
+  font-family: PT Sans;
+  font-size: 16px;
 
-  border-radius: 4px;
+  line-height: 20px;
+  text-align: left;
+  color: #ffffff;
+  background-color: #242424;
 
-  padding: 10px 45px 10px 18px;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 24px;
-  font-family: "PTsans", sans-serif;
-  color: #000000;
-  background-color: #f2f2f2;
-  border: 2px solid transparent;
-  appearance: none;
+  font-weight: normal;
+  text-transform: none;
+  padding: 15px 18px 18px 22px;
+  border-radius: 8px;
+
+  height: 152px;
+  width: 256px;
+  left: -56px;
+  top: 32px;
+
+  bottom: 100%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  display: none;
 }
 
-.children-counter {
-  position: relative;
+.form-info {
+  position: absolute;
+  margin-top: 4px;
+  margin-left: 2px;
+  width: 16px;
+  height: 16px;
+}
 
-  border-radius: 4px;
+.modal-find-button {
+  height: 60px;
+  width: 577px;
+  left: 0px;
+  top: 288px;
+  border-radius: 10px;
+  padding: 18px 77px 18px 77px;
+  margin-top: 48px;
+}
 
-  padding: 10px 45px 10px 18px;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 24px;
-  font-family: "PTsans", sans-serif;
-  color: #000000;
-  background-color: #f2f2f2;
-  border: 2px solid transparent;
-  appearance: none;
+.form-info-btn:hover + .form-info-desc,
+.form-info-btn:hover + .form-info-desc {
+  display: block;
 }
