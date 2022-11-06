@@ -192,7 +192,8 @@
         <span class="visually-hidden">Логотип HTMLAcademy</span>
       </a>
     </footer>
-    <div class="modal-container">
+
+    <div class="modal-container modal-container-close">
       <div class="modal modal-auth">
         <button class="modal-close-button">
           <span class="visually-hidden">Закрыть</span>
@@ -203,26 +204,47 @@
           <form class="date-form" action="https://echo.htmlacademy.ru/" method="post">
             <p class="field-group-1">
               <label class="come-date-field" for="come-date">Дата заезда:</label>
-              <input class="date-form-field field" type="date" id="come-date" name="come-date" placeholder="27/09/2020">
-            <p class="form-description form-description-1">Мы не можем отправить вас в прошлое.</p>
+              <input class="date-form-field field" type="text" id="come-date" name="come-date" value="27 апреля 2020" placeholder="Введите дату заезда">
+            <p class="form-message message-error">Мы не можем отправить вас в прошлое.</p>
             </p>
             <p class="field-group-2">
               <label class="go-date-field" for="go-date">Дата выезда:</label>
-              <input class="date-form-field field" type="date" id="go-date" name="go-date" placeholder="1/09/2023">
-            <p class="form-description form-description-2">На эти даты есть номера. Пока есть.</p>
+              <input class="date-form-field field" type="text" id="go-date" name="go-date" value="1 сентября 2021" placeholder="Введите дату выезда">
+            <p class="form-message">На эти даты есть номера. Пока есть.</p>
             </p>
-            <div class="people">
-              <label class="adults" for="adults">Взрослые:
-                <p class="adults-counter counter">
-                  <input type="number" size="3" name="num" min="1" max="10" value="1" id="adults">
-                </p>
-              </label>
-              <label class="children" for="children">Дети:
-                <svg width="2" height="12" viewBox="0 0 2 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H2V2H0V0ZM2 12H0V3H2V12Z" fill="white" />
-                </svg>
-                <p class="children-counter counter"><input type="number" size="3" name="num" min="1" max="10" value="1" id="children"></p>
-              </label>
+
+            <div class="form-item-people">
+              <label class="form-label form-label-adult" for="adults">Взрослые:</label>
+
+              <div class="form-container-people">
+                <button class="form-btn form-btn-min" type="button">
+                  <span class="visually-hidden">Уменьшить значение</span>
+                </button>
+                <input class="form-input form-input-people" id="adults" type="text" value="2">
+                <button class="form-btn form-btn-max" type="button">
+                  <span class="visually-hidden">Увеличить значение</span>
+                </button>
+              </div>
+
+              <div class="form-info-container">
+                <label class="form-label form-label-child" for="child">Дети:</label>
+
+                <div class="form-info">
+                  <button class="form-info-btn" type="button" aria-label="Информация"></button>
+                  <p class="form-info-desc">Укажите количество детей, которые будут с вами, возраст которых от 6 до 18 лет. Дети до 6 лет размещаются бесплатно.</p>
+                </div>
+              </div>
+
+              <div class="form-container-people">
+                <button class="form-btn form-btn-min" type="button">
+                  <span class="visually-hidden">Уменьшить значение</span>
+                </button>
+                <input class="form-input form-input-people" id="child" type="text" value="2">
+                <button class="form-btn form-btn-max" type="button">
+                  <span class="visually-hidden">Увеличить значение</span>
+                </button>
+              </div>
+
             </div>
             <button class="link button navigation-button button-blue modal-find-button">
               <span>Найти</span>
