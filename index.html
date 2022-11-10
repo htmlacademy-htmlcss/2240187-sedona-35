@@ -192,7 +192,7 @@
       </a>
     </footer>
 
-    <div class="modal-container">
+    <div class="modal-container modal-container-close">
       <div class="modal modal-search">
         <button class="modal-close-button" type="button">
           <span class="visually-hidden">Закрыть окно</span>
@@ -202,17 +202,17 @@
 
           <form class="form" action="https://echo.htmlacademy.ru/" method="post">
             <div class="form-item">
-              <label class="form-label" for="come-date">Дата заезда:</label>
-            </div>
-            <div class="form-container">
-              <input class="form-input form-input-calendar" type="text" id="come-date" value="27 апреля 2020" placeholder="Введите дату заезда">
-              <p class="form-message message-error">Мы не можем отправить вас в прошлое.</p>
-            </div>
+              <label class="form-label" for="come-date">Дата Заезда:</label>
+              <div class="form-container">
+                <input class="form-input form-input-calendar" type="text" id="come-date" value="27 апреля 2020" placeholder="Введите дату заезда">
+                <p class="form-message message-error">Мы не можем отправить вас в прошлое.</p>
+              </div>
+              <label class="form-label" for="go-date">Дата Выезда:</label>
+              <div class="form-container">
+                <input class=" form-input form-input-calendar" type="text" id="go-date" value="1 сентября 2021" placeholder="Введите дату выезда">
+                <p class="form-message">На эти даты есть свободные номера. Пока есть.</p>
+              </div>
 
-            <label class="go-date-field form-label" for="go-date">Дата выезда:</label>
-            <div class="form-container">
-              <input class=" form-input form-input-calendar" type="text" id="go-date" value="1 сентября 2021" placeholder="Введите дату выезда">
-              <p class="form-message">На эти даты есть номера. Пока есть.</p>
             </div>
 
             <div class="form-item-people">
@@ -236,7 +236,7 @@
                 </div>
               </div>
 
-              <div class="form-container form-container-people">
+              <div class="form-container-people">
                 <button class="form-btn form-btn-min" type="button">
                   <span class="visually-hidden">Уменьшить значение</span>
                 </button>
@@ -246,9 +246,8 @@
                 </button>
               </div>
             </div>
-            <button class="button button-blue form-submit">
-              <span>Найти</span>
-            </button>
+
+            <button class="button button-blue form-submit">Найти</button>
           </form>
         </section>
       </div>
