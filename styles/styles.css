@@ -716,6 +716,10 @@ img {
   opacity: 30%;
 }
 
+.label:disabled {
+  opacity: 30%;
+}
+
 .filter-input-check:checked {
   background-image: url("../images/svg/blue-tick.svg");
   background-repeat: no-repeat;
@@ -761,7 +765,7 @@ img {
 
   font-size: 18px;
   line-height: 21px;
-  font-family: "PTsans", sans-serif;
+  font-family: "PT Sans", sans-serif;
   color: #333333;
 
   background-color: transparent;
@@ -825,7 +829,6 @@ img {
 }
 
 .sorting-item:focus {
-  /*не работает*/
   border: 2px solid #68a2ca;
 }
 
@@ -859,7 +862,7 @@ img {
   font-weight: 700;
   font-size: 18px;
   line-height: 24px;
-  font-family: "PTsans", sans-serif;
+  font-family: "PT Sans", sans-serif;
   color: #000000;
   background-color: #f2f2f2;
   border: 2px solid transparent;
@@ -881,25 +884,6 @@ img {
 .filter-range-input::-webkit-outer-spin-button,
 .filter-range-input::-webkit-inner-spin-button {
   appearance: none;
-}
-
-.filter-range-input:hover {
-  background-color: #e6e6e6;
-}
-
-.filter-range-input:focus {
-  background-color: #e6e6e6;
-  outline: 3px solid #83b3d3;
-}
-
-.filter-range-input:active {
-  background-color: #f2f2f2;
-  border: 2px solid #000000;
-  outline: none;
-}
-
-.filter-range-input:disabled {
-  opacity: 0.3;
 }
 
 .filter-range-item label {
@@ -1338,20 +1322,24 @@ img {
   opacity: 60%;
 }
 
-.form-input-calendar:hover {
+.form-input:hover {
   background-color: #e6e6e6;
   border: 2px solid #e6e6e6;
 }
 
-.form-input-calendar:focus {
+.form-input:focus {
   background-color: #e6e6e6;
   outline: 2px solid #83b3d3;
 }
 
-.form-input-calendar:active {
+.form-input:active {
   background-color: #e6e6e6;
   outline: 2px solid #000000;
   opacity: 100%;
+}
+
+.form-input:disabled {
+  opacity: 30%;
 }
 
 .modal-container-close {
@@ -1368,8 +1356,10 @@ img {
 
 .form-item {
   display: grid;
-  grid-template-columns: auto;
-  row-gap: 23px;
+  align-items: baseline;
+  margin-bottom: 23px;
+  gap: 22px 20px;
+  grid-template-columns: auto 1fr;
 }
 
 .form-item-people {
@@ -1384,7 +1374,6 @@ img {
 .form-container-people {
   position: relative;
   width: 110px;
-  margin-top: 23px;
 }
 
 .form-btn {
@@ -1500,7 +1489,7 @@ img {
 .form-label-child {
   width: 50px;
   margin-right: 9px;
-  margin-left: 40px;
+  margin-left: auto;
 }
 
 .form-info-btn {
