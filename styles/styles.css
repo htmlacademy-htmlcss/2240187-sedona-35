@@ -472,8 +472,8 @@ img {
 }
 
 .subscribe {
-  padding-top: 68px;
-  padding-bottom: 104px;
+  padding-top: 50px;
+  padding-bottom: 109px;
 
   text-align: center;
 }
@@ -509,7 +509,7 @@ img {
   display: grid;
   max-width: 684px;
   margin: 0 auto;
-
+  padding-top: 35px;
   grid-template-columns: 1fr 232px;
 }
 
@@ -559,7 +559,7 @@ img {
 }
 
 .filter {
-  padding-top: 44px;
+  padding-top: 35px;
   padding-bottom: 70px;
 
   color: #ffffff;
@@ -672,6 +672,7 @@ img {
 }
 
 .filter-control {
+  font-size: 18px;
   line-height: 23px;
 }
 
@@ -954,6 +955,10 @@ img {
   right: 21%;
 }
 
+.filter-reset {
+  margin-top: 32px;
+}
+
 .hotels-list {
   display: grid;
   padding-bottom: 40px;
@@ -1010,8 +1015,13 @@ img {
   grid-column: 1/-1;
 }
 
+.hotels-type {
+  font-size: 18px;
+}
+
 .hotels-price {
   text-align: right;
+  font-size: 18px;
 }
 
 .hotels-rating-star {
