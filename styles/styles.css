@@ -511,7 +511,6 @@ img {
   display: grid;
   max-width: 684px;
   margin: 0 auto;
-  padding-top: 35px;
   grid-template-columns: 1fr 232px;
 }
 
@@ -675,6 +674,7 @@ img {
 
 .filter-control {
   font-size: 18px;
+  line-height: 23px;
 }
 
 .filter-control:hover {
@@ -962,10 +962,6 @@ img {
 
 .filter-toggle-bar-max {
   right: 21%;
-}
-
-.filter-reset {
-  margin-top: 32px;
 }
 
 .hotels-list {
