@@ -1319,7 +1319,7 @@ img {
 }
 
 .form-message {
-  margin: 6px 0 0 19px;
+  margin: 4px 0 0 19px;
   font-size: 16px;
   line-height: 21px;
   color: #333333;
@@ -1332,8 +1332,8 @@ img {
 .form-input-calendar {
   background-image: url("../images/svg/date.svg");
   background-repeat: no-repeat;
-  background-position: right 23px center;
-  background-size: 15px 15px;
+  background-position: right 19px center;
+  background-size: 20px 20px;
 }
 
 .form-input:hover {
