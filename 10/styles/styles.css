@@ -472,8 +472,8 @@ img {
 }
 
 .subscribe {
-  padding-top: 68px;
-  padding-bottom: 104px;
+  padding-top: 71px;
+  padding-bottom: 105px;
 
   text-align: center;
 }
@@ -493,12 +493,14 @@ img {
   text-transform: uppercase;
   font-size: 30px;
   line-height: 36px;
+  margin-bottom: 20px;
 }
 
 .subscribe-text {
   font-size: 22px;
   line-height: 26px;
   color: #333333;
+  margin: 0 0 54px;
 }
 
 .subscribe-home .subscribe-text {
@@ -509,7 +511,7 @@ img {
   display: grid;
   max-width: 684px;
   margin: 0 auto;
-
+  padding-top: 35px;
   grid-template-columns: 1fr 232px;
 }
 
@@ -559,7 +561,7 @@ img {
 }
 
 .filter {
-  padding-top: 44px;
+  padding-top: 35px;
   padding-bottom: 70px;
 
   color: #ffffff;
@@ -672,7 +674,7 @@ img {
 }
 
 .filter-control {
-  line-height: 23px;
+  font-size: 18px;
 }
 
 .filter-control:hover {
@@ -687,6 +689,10 @@ img {
   display: flex;
   flex-direction: column;
   padding-top: 56px;
+}
+
+.filter-submit {
+  margin-bottom: 32px;
 }
 
 .filter-input {
@@ -708,6 +714,10 @@ img {
 }
 
 .filter-input:active {
+  opacity: 30%;
+}
+
+.filter-input:disabled {
   opacity: 30%;
 }
 
@@ -954,6 +964,10 @@ img {
   right: 21%;
 }
 
+.filter-reset {
+  margin-top: 32px;
+}
+
 .hotels-list {
   display: grid;
   padding-bottom: 40px;
@@ -1010,8 +1024,15 @@ img {
   grid-column: 1/-1;
 }
 
+.hotels-type {
+  font-size: 18px;
+  line-height: 21px;
+}
+
 .hotels-price {
   text-align: right;
+  font-size: 18px;
+  line-height: 21px;
 }
 
 .hotels-rating-star {
@@ -1069,7 +1090,7 @@ img {
   display: flex;
   flex-wrap: wrap;
   padding-top: 40px;
-  padding-bottom: 70px;
+  padding-bottom: 59px;
 }
 
 .pagination-item {
@@ -1124,7 +1145,7 @@ img {
 
 .footer {
   display: grid;
-  padding: 40px 70px 30px 70px;
+  padding: 46px 70px 33px 70px;
 
   gap: 20px;
   grid-template-columns: auto 1fr auto;
@@ -1313,14 +1334,10 @@ img {
 }
 
 .form-input-calendar {
-  background-image: url("../images/svg/calendar.svg");
+  background-image: url("../images/svg/date.svg");
   background-repeat: no-repeat;
   background-position: right 23px center;
   background-size: 15px 15px;
-}
-
-.form-input-calendar {
-  opacity: 60%;
 }
 
 .form-input:hover {
@@ -1445,7 +1462,7 @@ img {
 .form-info-desc {
   position: absolute;
   top: 100%;
-  left: 34%;
+  left: 50%;
   z-index: 10;
   display: none;
   width: 256px;
