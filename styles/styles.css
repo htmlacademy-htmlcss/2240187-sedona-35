@@ -711,7 +711,7 @@ img {
   opacity: 30%;
 }
 
-.filter-input label:disabled {
+.filter-input:disabled + .filter-control {
   opacity: 30%;
 }
 
