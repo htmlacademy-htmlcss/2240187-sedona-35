@@ -293,13 +293,15 @@ img {
   width: 160px;
 }
 
+.greeting {
+  background-image: url("../images/hero.jpg");
+  background-position: cover;
+  background-repeat: no-repeat;
+}
+
 .greeting-img {
   padding-top: 51px;
   padding-bottom: 82px;
-
-  background-color: #004c7f;
-  background-image: url("../images/mount-sedona.jpg");
-  background-size: cover;
 }
 
 .greeting-img img {
@@ -972,6 +974,7 @@ img {
 
   gap: 17px 18px;
   grid-template-columns: repeat(3, 1fr);
+  align-items: start;
 }
 
 .hotels-item {
