@@ -291,15 +291,26 @@ img {
   width: 160px;
 }
 
-.greeting {
-  background-image: url("../images/hero.jpg");
-  background-position: cover;
-  background-repeat: no-repeat;
-}
-
 .greeting-img {
+  position: relative;
   padding-top: 51px;
   padding-bottom: 82px;
+
+  background-image: url("../images/mount-sedona.jpg");
+  background-size: cover;
+  background-color: #3f5e72;
+}
+
+.greeting-img::after {
+  position: absolute;
+  background-image: url("../images/svg/divider.svg");
+  background-size: 100%;
+  content: "";
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 57px;
+  z-index: 1;
 }
 
 .greeting-img img {
@@ -984,6 +995,7 @@ img {
 
   gap: 16px 20px;
   grid-template-columns: repeat(2, 1fr);
+  height: 100%;
 }
 
 .hotels-img {
